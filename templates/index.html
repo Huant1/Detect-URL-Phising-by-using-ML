@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Web App</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+        }
+        #logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            margin-right: 10px;
+            color: #333; 
+            font-size: 18px; 
+            font-weight: bold; 
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            width: 300px; 
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff; 
+            color: #fff; 
+            border: none;
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer;
+            transition: background-color 0.3s; 
+            float: right; 
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; 
+        }
+        .result {
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #e9e9e9; 
+            border-radius: 5px; 
+            text-align: center; 
+        }
+        .result p:first-child {
+            font-weight: bold; 
+            font-size: 20px; 
+            margin-bottom: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="static\img\Logo-Hoc-Vien-Ky-Thuat-Mat-Ma-ACTVN.png" alt="Logo">
+    <h1>URL detect use Machine Learning Model</h1>
+    <form action="/" method="post">
+        <div class="input-group">
+            <label for="input_data">URL check:</label>
+            <input type="text" id="input_data" name="input_data">
+        </div><br>
+        <input type="submit" value="Check">
+    </form>
+    {% if input_data %}
+    <div class="result">
+        <p><strong>Result</strong></p>
+        <p>{{ input_data }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
